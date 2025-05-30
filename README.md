@@ -6,3 +6,7 @@ range temporal dependencies in EEG signals. The model is evaluated on the SHU da
 using a subject-dependent cross-session setup.
 
 ![ModelPltFinal](https://github.com/user-attachments/assets/e5f2ce38-346f-447c-a4c0-eeffa65f455f)
+
+
+## Install requirments:
+pip install -r requirements.txt
