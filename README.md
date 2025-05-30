@@ -10,3 +10,15 @@ using a subject-dependent cross-session setup.
 
 ## Install requirments:
 pip install -r requirements.txt
+
+## Data availability:
+The dataset used in this project is publicly available at the following link:https://figshare.com/articles/code/shu_dataset/19228725
+
+## QUick Start:
+1. Download the dataset from the link above.
+
+2. Configure the dataset path inside the EEGMSTDNet_main.py file.
+
+3. Run the model by executing: python EEGMSTDNet_main.py
+
+To perform model interpretation, open the Jupyter notebook Model_interpretation_sub_6_Session_4.ipynb and run all the cells sequentially from the beginning. 
