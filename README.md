@@ -8,14 +8,19 @@ using a subject-dependent cross-session setup.
 ![ModelPltFinal](https://github.com/user-attachments/assets/e5f2ce38-346f-447c-a4c0-eeffa65f455f)
 
 
-Data availability:
+## Install requirments:
+To install the required dependencies, run:
+bash
+pip install -r requirements.txt 
+
+## Data availability:
 The dataset used in this project is publicly available at the following link: https://figshare.com/articles/code/shu_dataset/19228725. Please download the classification-ready .mat files, which have been preprocessed by the dataset creators.
 
-Quick Start:
-Download the dataset from the link above.
+## Quick Start:
+1. Download the dataset from the link above.
 
-Configure the dataset path inside the EEGMSTDNet_main.py file.
+2. Configure the dataset path inside the EEGMSTDNet_main.py file.
 
-Run the model by executing: python EEGMSTDNet_main.py
+3. Run the model by executing: python EEGMSTDNet_main.py
 
-To perform model interpretation, open the Jupyter notebook Model_interpretation_sub_6_Session_4.ipynb and run all the cells sequentially from the beginning.
+To perform model interpretation, open the Jupyter notebook 
