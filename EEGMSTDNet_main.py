@@ -1,56 +1,65 @@
+# Built-in libraries
 import os
 import sys
-import os
-import os
-import os
+import time
+import random
+import csv
+import gc
 
-import os
-os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
+# Scientific computing and data handling
+import numpy as np
+import pandas as pd
+import scipy.io
+from scipy import signal
+from collections import Counter, defaultdict
 
+# Scikit-learn
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics.pairwise import rbf_kernel
+from sklearn.model_selection import train_test_split
+from sklearn.utils import class_weight, compute_class_weight
+from sklearn.preprocessing import StandardScaler
+
+# TensorFlow and Keras
+import tensorflow as tf
+import keras
+import keras.backend as K
+from keras.models import Model, load_model
 from keras.optimizers import Adam
 from keras.regularizers import L2
+from keras.layers import (
+    Layer, Dense, Activation, Concatenate, Conv1D, Conv2DTranspose, Embedding,
+    GlobalAveragePooling1D, GlobalAveragePooling2D, GlobalMaxPooling2D, 
+    LayerNormalization, LeakyReLU, MultiHeadAttention, Multiply, Reshape, 
+    TimeDistributed, UpSampling2D, ZeroPadding2D, SeparableConv2D, 
+    DepthwiseConv2D, SpatialDropout2D
+)
 
-#from attention_models import attention_block
-
-from sklearn.preprocessing import StandardScaler
-from tensorflow.keras.layers import Lambda
-from keras.layers import Concatenate, Conv1D, Conv2DTranspose, Embedding, GlobalAveragePooling1D, GlobalAveragePooling2D, GlobalMaxPooling2D, LayerNormalization, LeakyReLU, MultiHeadAttention, Multiply, Reshape, TimeDistributed, UpSampling2D, ZeroPadding2D, multiply
-import numpy as np
-import tensorflow as tf
-from tensorflow.keras.models import Model
-from tensorflow.keras.layers import Dense, Flatten, Input, concatenate, Add,Dropout
-
-import keras_nlp
-from sklearn.metrics.pairwise import rbf_kernel
-from keras_nlp.layers import TransformerEncoder
-import random
-import scipy.io
-import csv
-#learning rate scheduler
-from tensorflow.keras.callbacks import ReduceLROnPlateau
+# TensorFlow Keras
 from tensorflow.keras import layers
-from tensorflow.keras.layers import BatchNormalization
-from tensorflow.keras.regularizers import l2
-
 from tensorflow.keras.models import Model
-from tensorflow.keras.layers import Dense, Activation, Permute, Dropout
-from tensorflow.keras.layers import Conv2D, MaxPooling2D, AveragePooling2D
-from tensorflow.keras.layers import SeparableConv2D, DepthwiseConv2D
-from tensorflow.keras.layers import BatchNormalization
-from tensorflow.keras.layers import SpatialDropout2D
-from tensorflow.keras.regularizers import l1_l2
-from tensorflow.keras.layers import Input, Flatten
-from tensorflow.keras.constraints import max_norm
 from tensorflow.keras import backend as K
+from tensorflow.keras.layers import (
+    Input, Dense, Dropout, Flatten, Lambda, Add, Activation, Permute, 
+    Conv2D, MaxPooling2D, AveragePooling2D, SeparableConv2D, DepthwiseConv2D,
+    BatchNormalization, SpatialDropout2D, GlobalAveragePooling2D, Multiply, 
+    Reshape, concatenate, dot, Softmax, LayerNormalization
+)
+from tensorflow.keras.constraints import max_norm
+from tensorflow.keras.regularizers import l1_l2, l2
+from tensorflow.keras.callbacks import (
+    EarlyStopping, ModelCheckpoint, Callback, ReduceLROnPlateau
+)
 
+# Add-ons and external libraries
+import tensorflow_addons as tfa
+import keras_nlp
+from keras_nlp.layers import TransformerEncoder
+from keras_cv_attention_models import swin_transformer_v2
 
-# Enable eager execution
-# tf.config.run_functions_eagerly(True)
-
+os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
 physical_devices = tf.config.list_physical_devices('GPU')
 
-import gc
-import tensorflow as tf
 gc.collect()
 tf.keras.backend.clear_session()
 
@@ -62,20 +71,7 @@ np.random.seed(42)        # NumPy operations
 random.seed(42) 
 # Augmentation functions
 
-from scipy import signal
 
-from keras.layers import Layer, Dense, Activation
-from keras.models import Model
-import keras.backend as K
-import numpy as np
-
-from keras.layers import Layer
-import numpy as np
-
-
-from tensorflow.keras.layers import Layer
-import keras_nlp
-from keras_cv_attention_models import swin_transformer_v2
 
 
 
@@ -132,27 +128,6 @@ class TrainableAlpha(Layer):
 
 
 
-
-from tensorflow.keras.layers import Layer, Add, LayerNormalization
-
-
-from tensorflow.keras.layers import Layer, Add, Activation
-
-from tensorflow.keras.layers import Dense, Lambda, Softmax, Multiply
-
-
-
-from tensorflow.keras.layers import GlobalAveragePooling2D, Dense, Multiply, Reshape
-from tensorflow.keras.models import Model
-from tensorflow.keras.layers import Dense, Activation, Permute, Dropout
-from tensorflow.keras.layers import Conv2D, MaxPooling2D, AveragePooling2D
-from tensorflow.keras.layers import SeparableConv2D, DepthwiseConv2D
-from tensorflow.keras.layers import BatchNormalization
-from tensorflow.keras.layers import SpatialDropout2D
-from tensorflow.keras.regularizers import l1_l2
-from tensorflow.keras.layers import Input, Flatten, Lambda, dot, concatenate
-from tensorflow.keras.constraints import max_norm
-from tensorflow.keras import backend as K
 
 
 def best_sofardil(nb_classes=2, Chans=32, Samples=1000,
@@ -261,7 +236,6 @@ def create_lr_scheduler_ft():
         min_lr=1e-4 #was 1e-4
     )
 
-from tensorflow.keras.callbacks import EarlyStopping
 
 def create_early_stopping():
     return EarlyStopping(
@@ -273,8 +247,6 @@ def create_early_stopping():
         verbose=1
     )
 
-import time
-from tensorflow.keras.callbacks import ModelCheckpoint, Callback
 
 class CustomModelCheckpoint(Callback):
     def __init__(self, filepath, **kwargs):
@@ -306,7 +278,6 @@ def create_best_model_checkpoint():
         save_best_only=True,
         verbose=1
     )
-from tensorflow.keras.callbacks import ModelCheckpoint
 
 
 
@@ -336,8 +307,6 @@ def create_check_point2():
     )
 
 
-import numpy as np
-from collections import Counter
 
 
 def print_class_distribution(y, dataset_name="Dataset"):
@@ -357,8 +326,6 @@ def print_class_distribution(y, dataset_name="Dataset"):
         print(f"  Class {cls}: {count} samples")
     print()
 
-# Example Usage:
-
 
 def cross_session_split(subject_sessions):
     # For simplicity, assume the first session is training, remaining sessions are testing
@@ -376,8 +343,6 @@ def cross_session_split(subject_sessions):
 
 
 
-import pandas as pd
-import numpy as np
 
 
 def get_next_versioned_filename(base_name, extension):
@@ -387,7 +352,7 @@ def get_next_versioned_filename(base_name, extension):
         if not os.path.exists(filename):
             return filename
         version += 1
-from keras.models import load_model
+
 
 def epoch_data(eeg_data, window_size, stride):
     num_trials, Chans, Samples = eeg_data.shape
@@ -399,7 +364,6 @@ def epoch_data(eeg_data, window_size, stride):
             end = start + window_size
             windows[i, j, :, :, 0] = eeg_data[i, :, start:end]
     return windows
-from sklearn.metrics import confusion_matrix
 
 
 if __name__ == "__main__":
@@ -462,7 +426,7 @@ if __name__ == "__main__":
     train_list, test_list = cross_session_split(subject_sessions)
 
 
-    from collections import defaultdict
+   
 
     session_accuracies_dict = defaultdict(list)
     class_accuracies_dict = defaultdict(lambda: defaultdict(list))
@@ -489,8 +453,7 @@ if __name__ == "__main__":
         
         train_labels = train_labels[train_mask]
 
-        from sklearn.model_selection import train_test_split
-
+        
         train_eeg_new, val_eeg, train_labels_new, val_labels = train_test_split(
             train_eeg,
             train_labels,
@@ -513,7 +476,6 @@ if __name__ == "__main__":
         train_labels = tf.keras.utils.to_categorical(train_labels, num_classes=2)
         val_labels = (val_labels - 1).clip(0)
         val_labels = tf.keras.utils.to_categorical(val_labels, num_classes=2)
-        from sklearn.utils.class_weight import compute_class_weight
         
         print("Training data shape:", train_eeg_new.shape)
         #create Adjacency matrix Version 1 54.8 with k=2
@@ -528,7 +490,7 @@ if __name__ == "__main__":
 
         print("Train EEG shape befor epoching:", train_eeg_new.shape)
        
-        import tensorflow_addons as tfa
+        
         optimizer = tfa.optimizers.AdamW(learning_rate=0.001, weight_decay=1e-6,)#weight_decay was 1e-4
 
         # optimizer = tf.keras.optimizers.Adam(learning_rate=0.001)
@@ -542,11 +504,10 @@ if __name__ == "__main__":
                 count += 1
 
         print(f"Total samples with incorrect time dimension: {count}")
-        import numpy as np
+        
 
         y_integers = np.argmax(train_labels_new, axis=1)
-        from sklearn.utils import class_weight
-        
+       
 
 
         model.fit(train_eeg_new, train_labels_new, epochs=100, batch_size=16,validation_data=(val_eeg,val_labels),callbacks=[create_lr_scheduler_ft(),best_model_callback] ,verbose=1)
@@ -555,8 +516,7 @@ if __name__ == "__main__":
         
         
         
-        import time
-
+        
         latency_list = []  # Store individual latencies
         
         for i, s_id in enumerate(test_list[subject_idx], start=1):
@@ -617,9 +577,6 @@ if __name__ == "__main__":
         print("final counter",counter)
         print(f"Session {session_idx:02d} Mean Accuracy Across Subjects: {session_mean_acc:.3f}")
     print(f"Mean Accuracy Across all Sessions: {accurac/counter:.3f}")
-    import numpy as np
-
-    import pandas as pd
 
     # Convert dict to DataFrame
     df = pd.DataFrame.from_dict(subject_accuracies_dict, orient='index')
@@ -664,7 +621,4 @@ if __name__ == "__main__":
     std_across_subjects = np.std(subject_mean_accuracies)
 
     print("Mean accuracy for each subject:", subject_mean_accuracies)
-    print("Standard deviation across subjects:", std_across_subjects)
-    
-
-   
+    print("Standard deviation across subjects:", std_across_subjects) 
