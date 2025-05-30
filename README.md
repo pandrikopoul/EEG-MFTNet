@@ -12,7 +12,7 @@ using a subject-dependent cross-session setup.
 pip install -r requirements.txt
 
 ## Data availability:
-The dataset used in this project is publicly available at the following link:https://figshare.com/articles/code/shu_dataset/19228725
+The dataset used in this project is publicly available at the following link: https://figshare.com/articles/code/shu_dataset/19228725. Please download the classification-ready .mat files, which have been preprocessed by the dataset creators.
 
 ## Quick Start:
 1. Download the dataset from the link above.
