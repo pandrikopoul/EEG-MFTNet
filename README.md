@@ -11,7 +11,7 @@ using a subject-dependent cross-session setup.
 ## Install requirments:
 To install the required dependencies, run:
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt ```
 
 ## Data availability:
 The dataset used in this project is publicly available at the following link: https://figshare.com/articles/code/shu_dataset/19228725. Please download the classification-ready .mat files, which have been preprocessed by the dataset creators.
