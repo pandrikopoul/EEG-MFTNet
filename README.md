@@ -16,10 +16,13 @@ pip install -r requirements.txt
 ## 📂 Data Availability:
 The dataset used in this project is publicly available at the following link: https://figshare.com/articles/code/shu_dataset/19228725. Please download the classification-ready .mat files, which have been preprocessed by the dataset creators.
 
-## 🚀 Quick Start:
-1. Download the dataset from the link above.
+## 🚀 Quick Start
 
-2. Configure the dataset path inside the EEGMSTDNet_main.py file.
+The entire pipeline—from reading the data to training and evaluating the model—is contained within the `main` function of the `EEGMSTDNet_main.py` file.
+
+1. Download the dataset from the link provided in the **📂 Data Availability** section.
+
+2. Open `EEGMSTDNet_main.py` and set the correct path to the dataset directory.
 
 3. Run the model by executing:
 ```bash
