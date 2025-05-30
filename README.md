@@ -22,7 +22,8 @@ The dataset used in this project is publicly available at the following link: ht
 2. Configure the dataset path inside the EEGMSTDNet_main.py file.
 
 3. Run the model by executing:
-```bash python EEGMSTDNet_main.py
+```bash
+ python EEGMSTDNet_main.py
 
 ```
 
