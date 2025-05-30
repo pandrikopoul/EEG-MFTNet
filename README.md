@@ -14,7 +14,7 @@ pip install -r requirements.txt
 ## Data availability:
 The dataset used in this project is publicly available at the following link:https://figshare.com/articles/code/shu_dataset/19228725
 
-### Quick Start:
+## Quick Start:
 1. Download the dataset from the link above.
 
 2. Configure the dataset path inside the EEGMSTDNet_main.py file.
