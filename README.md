@@ -9,6 +9,8 @@ using a subject-dependent cross-session setup.
 
 
 ## Install requirments:
+To install the required dependencies, run:
+```bash
 pip install -r requirements.txt
 
 ## Data availability:
