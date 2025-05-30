@@ -12,7 +12,7 @@ using a subject-dependent cross-session setup.
 To install the required dependencies, run:
 ```bash
 pip install -r requirements.txt 
-```bash
+```
 ## Data availability:
 The dataset used in this project is publicly available at the following link: https://figshare.com/articles/code/shu_dataset/19228725. Please download the classification-ready .mat files, which have been preprocessed by the dataset creators.
 
@@ -21,6 +21,10 @@ The dataset used in this project is publicly available at the following link: ht
 
 2. Configure the dataset path inside the EEGMSTDNet_main.py file.
 
-3. Run the model by executing:```bash python EEGMSTDNet_main.py```bash
+3. Run the model by executing:
+```bash python EEGMSTDNet_main.py
 
-To perform model interpretation, open the Jupyter notebook 
+```
+
+
+To perform model interpretation, open the Jupyter notebook Model_interpretation_sub_6_Session_4.ipynb and run all th
