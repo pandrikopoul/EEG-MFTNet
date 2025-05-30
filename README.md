@@ -28,4 +28,4 @@ The dataset used in this project is publicly available at the following link: ht
 ```
 
 
-o perform model interpretation, open the Jupyter notebook Model_interpretation_sub_6_Session_4.ipynb and run all the cells sequentially from the beginning.
+4. To perform model interpretation, open the Jupyter notebook Model_interpretation_sub_6_Session_4.ipynb and run all the cells sequentially from the beginning.
