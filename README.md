@@ -1,5 +1,8 @@
-# EEG-MSTDNet: An EEGNet-Based Deep Learning Model with Multi-Scale Temporal Convolutions and Transformer Fusion for Motor Imagery Decoding
-This project presents EEG-MSTDNet, a novel deep learning model
+# EEEG-MFTNet: An Enhanced EEGNet Architecture
+with Multi-Scale Temporal Convolutions and
+Transformer Fusion for Cross-Session Motor
+Imagery Decoding
+This project presents EEG-MFTNet, a novel deep learning model
 based on the EEGNet architecture, enhanced with multi-scale temporal convolutions and a
 Transformer encoder stream. These components are designed to capture both short and long-
 range temporal dependencies in EEG signals. The model is evaluated on the SHU dataset
