@@ -55,7 +55,7 @@ from tensorflow.keras.callbacks import (
 import tensorflow_addons as tfa
 import keras_nlp
 from keras_nlp.layers import TransformerEncoder
-from keras_cv_attention_models import swin_transformer_v2
+# from keras_cv_attention_models import swin_transformer_v2
 
 os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
 physical_devices = tf.config.list_physical_devices('GPU')
