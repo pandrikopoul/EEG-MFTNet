@@ -8,7 +8,7 @@ Transformer encoder stream. These components are designed to capture both short 
 range temporal dependencies in EEG signals. The model is evaluated on the SHU dataset
 using the subject-dependent cross-session setup provided by the dataset creators.
 
-![ModelPltFinal](https://github.com/user-attachments/assets/e5f2ce38-346f-447c-a4c0-eeffa65f455f)
+![cleanfinalmodelplot](https://github.com/user-attachments/assets/7682abc0-d7a8-4bd0-943b-0865952c11fb)
 
 
 ## ⚙️ Install Requirements:
