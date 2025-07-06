@@ -31,4 +31,4 @@ The entire pipeline—from reading the data to training and evaluating the model
 ```
 
 
-4. To perform model interpretation as well as the  trustworthiness test of the interpretation method used, open the Jupyter notebook Model_interpretation_sub_6_Session_4.ipynb and run all the cells sequentially from the beginning.4. To conduct model interpretation and assess the trustworthiness of the interpretation method, open the Jupyter notebook Model_interpretation_sub_6_Session_4.ipynb and execute all cells sequentially from the beginning.
+4. To conduct model interpretation and assess the trustworthiness of the interpretation method, open the Jupyter notebook Model_interpretation_sub_6_Session_4.ipynb and execute all cells sequentially from the beginning.
