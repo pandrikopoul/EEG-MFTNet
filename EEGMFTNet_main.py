@@ -130,7 +130,7 @@ class TrainableAlpha(Layer):
 
 
 
-def best_sofardil(nb_classes=2, Chans=32, Samples=1000,
+def EEGMFTNet(nb_classes=2, Chans=32, Samples=1000,
                             dropoutRate=0.3, F1=8, D=2, F2=16, 
                             norm_rate=0.25, dropoutType='Dropout'):
             if dropoutType == 'SpatialDropout2D':
@@ -139,7 +139,7 @@ def best_sofardil(nb_classes=2, Chans=32, Samples=1000,
                 dropoutType = Dropout
             else:
                 raise ValueError('dropoutType must be one of SpatialDropout2D or Dropout')
-            #lana rhoades
+            
             # Input layer
             input1 = Input(shape=(Chans, Samples, 1), name='input1')
             
@@ -483,7 +483,7 @@ if __name__ == "__main__":
         Adj = np.corrcoef(train_eeg_forADJ.reshape(-1, 32).T, ddof=1)
         Adj = tf.convert_to_tensor(Adj, dtype=tf.float32)
         
-        model = best_sofardil()
+        model = EEGMFTNet()
 
         
         best_model_callback = create_best_model_checkpoint_first()
