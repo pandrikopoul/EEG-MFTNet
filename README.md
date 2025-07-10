@@ -31,4 +31,4 @@ The entire pipeline—from reading the data to training and evaluating the model
 ```
 
 
-4. To conduct model interpretation and assess the trustworthiness of the interpretation method, open the Jupyter notebook Model_interpretation_sub_6_Session_4.ipynb and execute all cells sequentially from the beginning.
+4. To conduct model interpretation and assess the trustworthiness of the interpretation method, open the Jupyter notebook Model_interpretation_sub_6_Session_4.ipynb and execute all cells sequentially from the beginning.  If you prefer to skip model training, you can use the pre-trained weights provided in the Interpretation_model.weights.h5 file.
