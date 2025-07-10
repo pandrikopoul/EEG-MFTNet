@@ -18,7 +18,7 @@ The dataset used in this project is publicly available at the following link: ht
 
 ## 🚀 Quick Start
 
-The entire pipeline—from reading the data to training and evaluating the model—is contained within the `main` function of the `EEGMSTDNet_main.py` file.
+The entire pipeline—from reading the data to training and evaluating the model—is contained within the `main` function of the `EEGMSTDNet_main.py` file. If you wish to skip the training process, pre-trained model weights for each subject are available in the Saved_Model_Weights folder.
 
 1. Download the dataset from the link provided in the **📂 Data Availability** section.
 
