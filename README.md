@@ -1,6 +1,6 @@
-# EEEG-MFTNet
+# EEG-MFTNet
 
-Code for the Paper "EEEG-MFTNet: An Enhanced EEGNet Architecture with Multi-Scale Temporal Convolutions and Transformer Fusion for Cross-Session Motor Imagery Decoding" [Arxiv-link](https://arxiv.org/pdf/2604.05843).
+Code for the Paper "EEG-MFTNet: An Enhanced EEGNet Architecture with Multi-Scale Temporal Convolutions and Transformer Fusion for Cross-Session Motor Imagery Decoding" [Arxiv-link](https://arxiv.org/pdf/2604.05843).
 
 ![cleanfinalmodelplot](https://github.com/user-attachments/assets/7682abc0-d7a8-4bd0-943b-0865952c11fb)
 
