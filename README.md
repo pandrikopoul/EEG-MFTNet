@@ -1,9 +1,6 @@
-# EEEG-MFTNet: An Enhanced EEGNet Architecture with Multi-Scale Temporal Convolutions and Transformer Fusion for Cross-Session Motor Imagery Decoding
-This paper presents EEG-MFTNet, a novel deep learning model
-based on the EEGNet architecture, enhanced with multi-scale temporal convolutions and a
-Transformer encoder stream. These components are designed to capture both short and long-
-range temporal dependencies in EEG signals. The model is evaluated on the SHU dataset
-using the subject-dependent cross-session setup provided by the dataset creators.
+# EEEG-MFTNet
+
+Code for the Paper "EEEG-MFTNet: An Enhanced EEGNet Architecture with Multi-Scale Temporal Convolutions and Transformer Fusion for Cross-Session Motor Imagery Decoding" [Arxiv-link](https://arxiv.org/pdf/2604.05843).
 
 ![cleanfinalmodelplot](https://github.com/user-attachments/assets/7682abc0-d7a8-4bd0-943b-0865952c11fb)
 
